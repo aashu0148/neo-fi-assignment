@@ -25,7 +25,6 @@ export const numberToKConvertor = (num) => {
 };
 
 export const getFormattedPrice = (price = 0, maxDecimal = 2) => {
-  console.log(price);
   if (!price) return "";
 
   return parseFloat(price).toLocaleString("en-IN", {
