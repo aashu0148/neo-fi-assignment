@@ -23,6 +23,8 @@
       height: 70px;
       width: 70px;
       z-index: 20;
+      border-radius: 50%;
+      overflow: hidden;
 
       img,
       svg {
@@ -155,9 +157,9 @@
 
       .symbolImg {
         position: absolute;
-        top: -23px;
+        top: -25px;
         left: 50%;
-        transform: translateX(-48%);
+        transform: translateX(-52%);
         height: 65px;
         width: 65px;
         z-index: 20;
