@@ -1,0 +1,114 @@
+@import "styles/_variables";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .label {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: $white-2;
+
+    span {
+      font-size: 0.875rem;
+    }
+  }
+
+  .inputContainer {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin: 3px 0;
+
+    input {
+      margin: 0;
+      font-size: 22px;
+      line-height: 31px;
+      font-weight: 600;
+      padding: 15px 25px;
+
+      &::placeholder {
+        color: $gray;
+      }
+
+      &:disabled {
+        background-color: $dark-blue-2;
+      }
+    }
+
+    .passwordInput {
+      padding-right: 31px;
+    }
+
+    .icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .eye {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      cursor: pointer;
+      height: 18px;
+      width: 18px;
+      transform: translateY(-50%);
+
+      svg {
+        height: 100%;
+        width: 100%;
+        color: $gray;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin: 0;
+
+      input {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 9px 16px;
+      }
+
+      .passwordInput {
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .hint {
+    font-size: 14px;
+    line-height: 18px;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .errorMsg {
+    color: red;
+    font-weight: bold;
+    font-size: 0.875rem;
+    padding-left: 3px;
+  }
+}
+
+.selectContainer {
+  margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    .label {
+      font-size: 0.875rem;
+    }
+
+    input {
+      height: 35px;
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -1,0 +1,234 @@
+@import "styles/variables.scss";
+
+.container {
+  min-height: calc(100vh - 80px);
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --roundness: 20px;
+
+  .authOuter {
+    width: 470px;
+    border-radius: 10px;
+    position: relative;
+
+    .symbolImg {
+      position: absolute;
+      top: -23px;
+      left: 50%;
+      transform: translateX(-48%);
+      height: 70px;
+      width: 70px;
+      z-index: 20;
+
+      img,
+      svg {
+        height: 100% !important;
+        width: 100% !important;
+      }
+    }
+
+    .cutout {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      img {
+        width: 101%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+
+    .auth {
+      width: 100%;
+      min-height: 570px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding: 25px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+      padding-top: 80px;
+
+      .input {
+        input {
+          padding-right: 60px;
+        }
+
+        .inr {
+          font-size: 16px;
+          color: $white;
+          line-height: 24px;
+          text-transform: uppercase;
+          padding-right: 15px;
+        }
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .label {
+          color: $white-2;
+          font-size: 14px;
+          line-height: 21px;
+        }
+
+        .value {
+          font-size: 24px;
+          line-height: 36px;
+          font-weight: 600;
+          color: $blue-2;
+        }
+      }
+
+      .select {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        background-color: $dark-blue-2;
+        padding: 18px 24px;
+        cursor: pointer;
+
+        .left {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          svg,
+          img {
+            height: 25px;
+            width: 25px;
+          }
+
+          .name {
+            text-transform: capitalize;
+            font-size: 16px;
+            font-weight: 400;
+            color: $white;
+          }
+        }
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          padding: 5px;
+
+          svg {
+            height: 15px;
+            width: 15px;
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        font-size: 18px;
+        line-height: 27px;
+        padding: 12px 24px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+
+    .authOuter {
+      max-width: 100%;
+      width: 470px;
+
+      .symbolImg {
+        position: absolute;
+        top: -23px;
+        left: 50%;
+        transform: translateX(-48%);
+        height: 65px;
+        width: 65px;
+        z-index: 20;
+      }
+
+      .cutout {
+        img {
+          width: 99%;
+        }
+      }
+
+      .auth {
+        min-height: 450px;
+        gap: 26px;
+        padding: 20px;
+        padding-top: 70px;
+
+        .input {
+          input {
+            padding-right: 30px;
+          }
+
+          .inr {
+            font-size: 14px;
+            line-height: 20px;
+            padding-right: 10px;
+          }
+        }
+
+        .top {
+          .label {
+            font-size: 12px;
+            line-height: 18px;
+          }
+
+          .value {
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+
+        .select {
+          padding: 10px 20px;
+
+          .left {
+            gap: 5px;
+
+            svg,
+            img {
+              height: 22px;
+              width: 22px;
+            }
+
+            .name {
+              font-size: 14px;
+            }
+          }
+
+          .icon {
+            svg {
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+
+        button {
+          font-size: 16px;
+          padding: 6px 20px;
+        }
+      }
+    }
+  }
+}

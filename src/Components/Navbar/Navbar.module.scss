@@ -1,0 +1,72 @@
+@import "styles/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 16px 38px;
+  padding-bottom: 6px;
+  background-color: $dark-blue;
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    .link {
+      list-style: none;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      color: $gray;
+      transition: 200ms;
+      cursor: pointer;
+      padding: 5px 15px;
+      padding-bottom: 12px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 8px;
+        height: 2px;
+        width: 0;
+        background-color: $blue-2;
+        transform-origin: center;
+        transition: 200ms;
+      }
+    }
+
+    .active {
+      color: $blue-2;
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    padding: 12px 20px;
+
+    .logo {
+      img {
+        width: 80px;
+      }
+    }
+
+    .links {
+      display: none;
+    }
+  }
+}
