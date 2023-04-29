@@ -9,6 +9,7 @@ import cutout from "assets/cutout.svg";
 import { downIcon } from "utils/svgs";
 
 import styles from "./Auth.module.scss";
+import { getFormattedPrice } from "utils/util";
 
 const { nameLookup } = cryptoSymbol({});
 let socket;
@@ -103,7 +104,7 @@ function Auth() {
             <p className={styles.label}>Current value</p>
             <p className={styles.value}>
               {prices[selectedSymbol.symbol]
-                ? `₹${prices[selectedSymbol.symbol]}`
+                ? `${getFormattedPrice(prices[selectedSymbol.symbol], 3)}`
                 : ""}
             </p>
           </div>

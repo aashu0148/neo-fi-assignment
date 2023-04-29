@@ -15,3 +15,22 @@ export const handleNumericInputKeyDown = (event) => {
     if (event.preventDefault) event.preventDefault();
   }
 };
+
+export const numberToKConvertor = (num) => {
+  num = parseInt(num);
+
+  return Math.abs(num) > 999
+    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "K"
+    : Math.sign(num) * Math.abs(num);
+};
+
+export const getFormattedPrice = (price = 0, maxDecimal = 2) => {
+  console.log(price);
+  if (!price) return "";
+
+  return parseFloat(price).toLocaleString("en-IN", {
+    maximumFractionDigits: maxDecimal,
+    style: "currency",
+    currency: "INR",
+  });
+};
