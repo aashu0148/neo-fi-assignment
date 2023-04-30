@@ -17,8 +17,14 @@ function SelectSymbolModal({
   const handleSearch = (event) => {
     const val = event.target.value.trim();
 
-    const filter = allSymbols.sort((a, b) =>
-      a.name.toLowerCase().includes(val) ? -1 : 1
+    const filter = allSymbols.filter((item) =>
+      item.name.toLowerCase().includes(val.toLowerCase())
+    );
+    filter.sort((a, b) =>
+      a.name.toLowerCase().indexOf(val.toLowerCase()) >
+      b.name.toLowerCase().indexOf(val.toLowerCase())
+        ? 1
+        : -1
     );
 
     setSymbols(filter);
