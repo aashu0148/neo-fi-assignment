@@ -27,9 +27,13 @@ function Auth() {
 
     const symbols = data.symbols
       .filter((item) => item.status == "TRADING")
-      .slice(0, 150)
+      .slice(0, 250)
       .map((item) => ({ ...item, name: nameLookup(item.baseAsset) }))
       .filter((item) => item.name && item.baseAsset)
+      .filter(
+        (item, index, self) =>
+          index == self.findIndex((e) => e.name == item.name)
+      )
       .slice(0, 50);
 
     setAllSymbols(symbols);
@@ -138,7 +142,7 @@ function Auth() {
             icon={<p className={styles.inr}>INR</p>}
           />
           <InputControl
-            label="Estimate Number of ETH You will Get"
+            label={`Estimate Number of ${selectedSymbol.name} You will Get`}
             numericInput
             placeholder="0.00"
             disabled
